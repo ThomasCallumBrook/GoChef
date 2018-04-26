@@ -43,6 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.integer :will_travel
       t.string :avatar
       t.integer :radius
+      t.integer :switcher
 
       t.timestamps null: false
     end
