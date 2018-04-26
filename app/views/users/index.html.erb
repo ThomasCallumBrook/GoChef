@@ -1,28 +1,37 @@
-<% if user_signed_in? %>
-  <h2>Hello <%= current_user.name %>, welcome to Go Chef!</h2>
+<div class="full-hero" style="background-image:url(<%= image_path('hero2.jpg') %>)">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+    <h2>Hello <%= current_user.name %>, welcome to Go Chef!</h2>
   <%end%>
-<table>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>Rating</th>
-      <th>Price</th>
-      <th>Caters up to</th>
-    </tr>
-  <% @users.each do |chef|%>
-    <tr>
-      <td><% unless chef.avatar.blank? %>
-        <div class="thumbnail" style="background-image:url(<%= image_path(chef.avatar) %>)"></div>
-        <% end %></td>
-      <td><h4 class="chef"><%= link_to chef.name, "/users/#{chef.id}" %></h4></td>
-      <td><h4><%= chef.rating %></h4></td>
-      <td><h4><%= chef.price_per_head %></h4></td>
-      <td><h4><%= chef.max_party_size %></h4></td>
-    <% end %></tr>
-</table>
- <!--  <h3>All Chef Locations</h3>
-  <h4>Click on the map to see if chefs serve your location!</h4> -->
-<!--   <div id="home-map"></div> -->
+  <div class="hero-content">
+
+    <h1>BEYOND ENTICING</h1>
+  </div>
+</div>
+<div class="index">
+  <div class="row-container">
+
+    <% @users.each do |chef|%>
+      <div class="row">
+        <% if chef.avatar.blank? %>
+          <div class="thumbnail" style="background-image:url(<%= image_path('default.png') %>)"></div>
+        <% else %>
+          <div class="thumbnail" style="background-image:url(<%= image_path(chef.avatar) %>)"></div>
+        <% end %>
+        <p class="chef"><%= link_to chef.name, "/users/#{chef.id}" %></p>
+        <p class="rating"><%= chef.rating %></p>
+        <p class="price"><%= chef.price_per_head %></p>
+        <p class="party"><%= chef.max_party_size %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="map-container">
+    <h3>All Chef Locations</h3>
+    <p>Click on the map to see if chefs serve your location!</p>
+    <div id="home-map"></div>
+  </div>
+</div>
 
 
   <script type="text/javascript">
@@ -35,7 +44,7 @@
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
-      radius: 1,
+      radius: chef.radius*1000,
       }).addTo(mymap);
       circle.bindPopup(`<a href="/users/${chef.id}" >${chef.name}</a>`);
     }
