@@ -8,11 +8,13 @@ body {
   background: no-repeat center bottom fixed url("food-background.jpeg");
   position: relative;
   background-size: cover;
+  font-family:  helvetica;
 }
-
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway', helvetica, sans;
+  font-weight: 100;
+}
 .content{
-  margin-top: 10px;
-  margin-left: 10px;
   line-height: 1.5;
 }
 
@@ -51,16 +53,15 @@ nav{
   text-decoration: none;
   list-style: none;
   float: right;
-}
 
-.nav-links a{
-  text-decoration: none;
-  padding: 0 10px;
-  border-left: 1px solid #333;
-  text-transform: uppercase;
-  font-family: arial;
+   a{
+    text-decoration: none;
+    padding: 0 10px;
+    border-left: 1px solid #333;
+    text-transform: uppercase;
+    font-family: arial;
+  }
 }
-
 /* divise */
 .field{
   padding: 5px;
@@ -73,9 +74,6 @@ nav{
 .devise-links a {
   text-decoration: none;
 }
-
-/* chefs */
-
 
 /* Bio Style */
 
@@ -105,48 +103,11 @@ nav{
   }
 }
 
-/* Home Page */
-
-.chef-container {
-  height: 100px;
-  width: 100%;
-
-
-h2 {
-  display: inline-block;
-  width: 200px;
-  height: 40px;
-  padding: 15px;
-
-
-  }
-
-  a {
-  text-decoration: none;
-  color: black;
-}
-
-div.thumbnail {
-    border-radius: 50%;
-    overflow: hidden;
-    height: 75px;
-    width: 75px;
-    background-size: cover;
-    float: left;
-  }
-
-}
-
 /* map */
 
 #mapid{
   height: 300px;
   width: 300px;
-  position: relative;
-}
-#home-map{
-  height:50vh;
-  width: 50% ;
   position: relative;
 }
 
@@ -242,9 +203,143 @@ div.thumbnail {
 }
 
 
+/* Home Page */
 
+.index{
+  display: grid;
+  grid-row: auto;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+  "row map";
+}
+.full-hero {
+  position: relative;
+  background-size: cover;
+  box-sizing: border-box;
+  height: 85vh;
+  color: #fff;
+  position: relative;
+  text-align: left;
 
+  }
+.full-hero:after {
+  top: 80vh;
+  border: 10px solid;
+  border-color: #000 transparent transparent;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 0;
+}
+.hero-content {
+  color: #333;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  top: 25%;
+  transform: translate(0, -50%);
+}
+.hero-content h1 {
+  position: relative;
+  color: rgba(0, 0, 0, 0.9  );
+  font-family:'Open Sans';
+  font-size: 5vw;
+  margin-bottom: 0.25em;
+  z-index: 3;
+}
+.row-container{
+  grid-area: row;
+}
 
+.full-hero h2 {
+  display: inline-block;
+  width: 600px;
+  height: 40px;
+  padding: 15px;
+  font-family: 'Open Sans';
+  opacity: 0.8;
+}
 
+  a {
+  text-decoration: none;
+  color: black;
+}
 
+.row {
+  border-radius: 25px;
+  margin: 20px;
+  width:60%;
+  min-width: 600px;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 100px 20% 15% 15% 15%;
+  grid-template-rows: 100px;
+  grid-column-gap: 20px;
+  grid-template-areas: "piccy title rating price party";
+  align-items: center;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  height: 100px;
+  background-color: rgba(139, 174, 229, 0.8);
+  margin: 20px, 10px;
 
+  .thumbnail {
+    grid-area: piccy;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 90px;
+    width: 90px;
+    background-size: cover;
+    float: left;
+    justify-self: center;
+  }
+  .chef {
+    grid-area: title;
+    justify-self: start;
+    font-size: 1.2rem;
+  }
+  .rating {
+    grid-area: rating;
+    justify-self: end;
+  }
+  .price {
+    grid-area: price;
+    justify-self: end;
+  }
+  .party {
+    grid-area: party;
+    justify-self: end;
+  }
+}
+.map-container{
+  grid-area: map;
+  align-self:center;
+}
+
+#home-map{
+  height:50vh;
+  width: 80% ;
+  position: relative;
+}
+@media only screen and (max-width: 1050px) {
+  .map-container {
+    display: none;
+  }
+  .index{
+    justify-content: center;
+    grid-row: 85vh auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "hero"
+    "row";
+  }
+  .row-container{
+    align-self: center;
+  }
+  .row{
+    width:auto;
+  }
+}
