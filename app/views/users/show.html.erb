@@ -2,7 +2,7 @@
   <div class="chef-view">
     <h1><%= @user.name %></h1>
     <p class="bio"> <%= @user.bio %> </p>
-    <div id="cuisines">
+    <div id="cuisine">
       <h2>Cuisines:</h2>
       <ul>
         <% @user.cuisines.each do |cuisine| %>
@@ -10,7 +10,11 @@
         <% end %>
       </ul>
     </div>
+    <div id="rating_bio"><%= @user.rating %></div>
+    <div id="price_bio"><%= @user.price_per_head %></div>
+    <div id="caters_bio"><%= @user.max_party_size %></div>
   </div>
+
   <div class="portrait" style="background-image:url(<%= image_path(@user.avatar) %>)"></div>
     <div id="gallery">
       <%@user.images.each do |pic| %>
