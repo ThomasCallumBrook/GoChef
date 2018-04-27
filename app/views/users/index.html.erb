@@ -10,17 +10,38 @@
   </div>
 </div>
 <div class="index">
-  <div class="selecta">
-     <%= form_tag  '/users/filter' do %>
-       <%= submit_tag 'Rating' %>
+
+  <div class="row-container">
+
+    <div class="row button">
+
+      <%= form_tag '/users/cuisine' do %>
+        <%= text_field_tag :cuisine, nil, placeholder: 'search cuisine type', id: "cuisine-search" %>
+        <%= submit_tag "search", id: "cuisine"%>
+      <% end %>
+        <% if @message %>
+        <%= @message %>
+      <% end %>
+
+     <div id="rating">
+        <%= form_tag  '/users/filter' do %>
+         <%= submit_tag 'Rating', class: "btn" %>
+        <% end %>
+     </div>
+
+     <div id="caters">
+      <%= form_tag  '/users/filter' do %>
+       <%= submit_tag 'Caters up to', class: "btn" %>
      <% end %>
-     <%= form_tag  '/users/filter' do %>
-       <%= submit_tag 'Caters up to' %>
-     <% end %>
-     <%= form_tag  '/users/filter' do %>
-       <%= submit_tag 'Price' %>
-     <% end %>
+     </div>
+
+     <div id="price">
+      <%= form_tag  '/users/filter' do %>
+       <%= submit_tag 'Price', class: "btn" %>
+     <% end %></div>
+
   </div>
+
   <div class="row-container">
     <div class="row button">
       <div id="rating"><%= form_tag  '/users/filter' do %>
@@ -51,17 +72,9 @@
       </div>
     <% end %>
   </div>
+
+
   <div class="map-container">
-    <div class="search-cuisine">
-    <h3>Search chefs by cuisine:</h3>
-    <%= form_tag '/users/cuisine' do %>
-      <%= text_field_tag :cuisine %>
-      <%= submit_tag "search" %>
-    <% end %>
-    <% if @message %>
-      <%= @message %>
-    <% end %>
-  </div>
     <h3>All Chef Locations</h3>
     <p>Click on the map to see if chefs serve your location!</p>
     <div id="home-map"></div>
