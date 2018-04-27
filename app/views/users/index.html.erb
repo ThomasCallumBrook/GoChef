@@ -11,6 +11,20 @@
 </div>
 <div class="index">
   <div class="row-container">
+    <div class="row button">
+      <div id="rating"><%= form_tag  '/users/filter' do %>
+        <%= submit_tag 'Rating', class: "btn" %>
+        <% end %>
+      </div>
+      <div id="caters"><%= form_tag  '/users/filter' do %>
+        <%= submit_tag 'Caters up to', class: "btn" %>
+        <% end %>
+      </div>
+      <div id="price"><%= form_tag  '/users/filter' do %>
+        <%= submit_tag 'Price', class: "btn" %>
+        <% end %>
+      </div>
+    </div>
 
     <% @users.each do |chef|%>
       <div class="row">
@@ -74,6 +88,7 @@
       chefs.forEach(function(chef){
         if (getDistanceFromLatLonInKm(chef.location_lat, chef.location_lon, event.latlng.lat, event.latlng.lng) < chef.radius){
           addCircle(chef);
+
         };
       });
     }
