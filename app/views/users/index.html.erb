@@ -17,7 +17,8 @@
 
       <%= form_tag '/users/cuisine' do %>
         <%= text_field_tag :cuisine, nil, placeholder: 'search cuisine type', id: "cuisine-search" %>
-        <%= submit_tag "search", id: "cuisine"%>
+          <%= submit_tag "search", id: "cuisine-btn"%>
+
       <% end %>
         <% if @message %>
         <%= @message %>
@@ -56,17 +57,13 @@
     <% end %>
   </div>
 
-
   <div class="map-container">
     <h3>All Chef Locations</h3>
     <p>Click on the map to see if chefs serve your location!</p>
     <div id="home-map"></div>
   </div>
 
-
 </div>
-
-
 
   <script type="text/javascript">
     var chefs = <%= raw JSON.generate(@users.map(&:as_json))  %>;

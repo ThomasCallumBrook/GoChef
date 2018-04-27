@@ -98,15 +98,15 @@
   }
   .rating {
     grid-area: rating;
-    justify-self: end;
+    justify-self: center;
   }
   .price {
     grid-area: price;
-    justify-self: end;
+    justify-self: center;
   }
   .party {
     grid-area: party;
-    justify-self: end;
+    justify-self: center;
   }
 }
 .map-container{
