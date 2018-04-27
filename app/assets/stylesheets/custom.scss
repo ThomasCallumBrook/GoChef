@@ -104,7 +104,6 @@ nav{
 
 /*media rules*/
 
-
 @media only screen and (max-width: 1050px) {
   .map-container {
     display: none;
@@ -120,13 +119,71 @@ nav{
   .row-container{
     align-self: center;
   }
-  .row{
-    width:auto;
-  }
 }
+
 @media only screen and (max-width: 600px) {
   #header h1{
     font-size: 2rem;
     width:100px;
   }
 }
+
+
+/* button-title */
+
+  #rating {
+    grid-area: rating;
+    justify-self: center;
+  }
+
+
+  #caters {
+    grid-area: party;
+    justify-self: center;
+  }
+
+
+  #price {
+    grid-area: price;
+    justify-self: center;
+  }
+
+
+  #cuisine-search {
+    grid-area: title;
+    justify-self: start;
+  }
+
+
+
+  .button {
+    background-color: rgb(77, 116, 146);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    align-items: start;
+    grid-template-rows: 20px;
+    height: 42px;
+  }
+
+  .btn {
+    margin-top: 4px;
+    background-color: rgb(139, 174, 229);
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 5px;
+    border-color: rgb(139, 174, 229);
+
+
+    &:hover  {
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8)
+    }
+
+
+
+  }
+
+
+
+
+

@@ -10,6 +10,38 @@
   </div>
 </div>
 <div class="index">
+
+  <div class="row-container">
+
+    <div class="row button">
+
+      <%= form_tag '/users/cuisine' do %>
+        <%= text_field_tag :cuisine, nil, placeholder: 'search cuisine type', id: "cuisine-search" %>
+        <%= submit_tag "search", id: "cuisine"%>
+      <% end %>
+        <% if @message %>
+        <%= @message %>
+      <% end %>
+
+     <div id="rating">
+        <%= form_tag  '/users/filter' do %>
+         <%= submit_tag 'Rating', class: "btn" %>
+        <% end %>
+     </div>
+
+     <div id="caters">
+      <%= form_tag  '/users/filter' do %>
+       <%= submit_tag 'Caters up to', class: "btn" %>
+     <% end %>
+     </div>
+
+     <div id="price">
+      <%= form_tag  '/users/filter' do %>
+       <%= submit_tag 'Price', class: "btn" %>
+     <% end %></div>
+
+  </div>
+
   <div class="row-container">
     <div class="row button">
       <div id="rating"><%= form_tag  '/users/filter' do %>
@@ -40,16 +72,21 @@
       </div>
     <% end %>
   </div>
+
+
   <div class="map-container">
     <h3>All Chef Locations</h3>
     <p>Click on the map to see if chefs serve your location!</p>
     <div id="home-map"></div>
   </div>
+
+
 </div>
 
 
+
   <script type="text/javascript">
-    var chefs = <%= raw JSON.generate(@users.all.map(&:as_json))  %>;
+    var chefs = <%= raw JSON.generate(@users.map(&:as_json))  %>;
     var mymap = L.map('home-map').setView([51.505, -0.115], 4);
     var layer = new L.StamenTileLayer("terrain");
     mymap.addLayer(layer);
