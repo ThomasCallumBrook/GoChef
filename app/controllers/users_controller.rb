@@ -2,7 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    if params['cuisine']
+    if params['cuisine'] == ''
+       @users = User.all
+
+    elsif params['cuisine']
       @substring = request.params['cuisine']
       @users = User.joins(skillsets: :cuisine).where("cuisines.food LIKE ?", "%#{@substring.capitalize}%")
 

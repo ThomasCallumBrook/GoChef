@@ -149,9 +149,24 @@ nav{
   }
 
 
-  #cuisine-search {
-    grid-area: title;
-    justify-self: start;
+  #cuisine-btn {
+    left: 180px;
+    position: absolute;
+    margin-top: -20px;
+    background-color: rgb(139, 174, 229);
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 5px;
+    border-color: rgb(139, 174, 229);
+  }
+
+  #cuisine-search{
+    left: 20px;
+    width: 120px;
+    height: 20px;
+    top: 8px;
+    grid-area: piccy;
+    position: relative;
   }
 
 
