@@ -1,0 +1,154 @@
+/* Home Page */
+
+.index{
+  display: grid;
+  grid-row: auto;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+  "row map"
+  ;
+}
+.full-hero {
+  position: relative;
+  background-size: cover;
+  box-sizing: border-box;
+  height: calc(100vh - 100px);
+  color: #fff;
+  position: relative;
+  text-align: left;
+
+  }
+.full-hero:after {
+  bottom: 10px;
+  border: 10px solid;
+  border-color: #000 transparent transparent;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 0;
+}
+.hero-content {
+  color: #333;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  top: 25%;
+  transform: translate(0, -50%);
+}
+.hero-content h1 {
+  position: relative;
+  color: rgba(0, 0, 0, 0.9  );
+  font-family:'Open Sans';
+  font-size: 5vw;
+  margin-bottom: 0.25em;
+  z-index: 3;
+}
+.row-container{
+  grid-area: row;
+}
+
+.full-hero h2 {
+  display: inline-block;
+  width: 600px;
+  height: 40px;
+  padding: 15px;
+  font-family: 'Open Sans';
+  opacity: 0.8;
+}
+
+  a {
+  text-decoration: none;
+  color: black;
+}
+
+.row {
+  border-radius: 25px;
+  width:60%;
+  margin: 20px;
+  min-width: 600px;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 100px 20% 15% 15% 15%;
+  grid-template-rows: 100px;
+  grid-column-gap: 20px;
+  grid-template-areas: "piccy title rating price party";
+  align-items: center;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  height: 100px;
+  background-color: rgba(139, 174, 229, 0.8);
+
+
+  .thumbnail {
+    grid-area: piccy;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 90px;
+    width: 90px;
+    background-size: cover;
+    justify-self: center;
+  }
+  .chef {
+    grid-area: title;
+    justify-self: start;
+    font-size: 1.2rem;
+  }
+  .rating {
+    grid-area: rating;
+    justify-self: end;
+  }
+  .price {
+    grid-area: price;
+    justify-self: end;
+  }
+  .party {
+    grid-area: party;
+    justify-self: end;
+  }
+}
+.map-container{
+  grid-area: map;
+  align-self:center;
+}
+
+#home-map{
+  height:50vh;
+  width: 80% ;
+  position: relative;
+}
+
+/* button-title */
+#rating {
+   grid-area: rating;
+   justify-self: center;
+ }
+ #caters {
+   grid-area: party;
+   justify-self: center;
+ }
+ #price {
+   grid-area: price;
+   justify-self: center;
+ }
+ .button {
+   background-color: rgb(77, 116, 146);
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   align-items: start;
+   grid-template-rows: 20px;
+   height: 42px;
+ }
+ .btn {
+   margin-top: 4px;
+   background-color: rgb(139, 174, 229);
+   font-size: 18px;
+   border-radius: 15px;
+   padding: 5px;
+   border-color: rgb(139, 174, 229);    &:hover  {
+     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8)
+   }
+}

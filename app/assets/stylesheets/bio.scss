@@ -1,0 +1,129 @@
+/*bio-page*/
+.bio-page{
+  position:absolute;
+  display: grid;
+  grid-row: auto 300px;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+  "bio bio bio portrait"
+  "gallery gallery gallery gallery"
+  ;
+  width: 80%;
+  left:50%;
+  transform: translate(-50% , 0 );
+  grid-gap: 20px;
+  .chef-view {
+    grid-area: bio;
+    min-height: 90vh;
+    h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+    p {
+      width: 75%;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  .portrait {
+    grid-area: portrait;
+    align-self: top;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    justify-self: end;
+  }
+
+}
+/* gallery */
+#gallery{
+  grid-area: gallery;
+  margin: auto;
+  background-size: cover;
+  max-height: 300px;
+  margin-bottom: 20px;
+}
+.carousel{
+  position:relative;
+  width:600px;
+  height:300px;
+  overflow:hidden;
+}
+
+.carousel img{
+  max-width:600px;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0.0;
+}
+
+.carousel.fade img{
+  transition: opacity 1s;
+}
+
+.carousel.slide img{
+  transition: left 1s;
+}
+
+.carousel img.show{
+  opacity:1.0;
+}
+
+.carousel img.left{
+  opacity:1.0;
+  left:-600px;
+  z-index:1000;
+  border-radius: 25px;
+}
+
+.carousel img.centre{
+  opacity:1.0;
+  left:0px;
+  z-index:10000;
+  border-radius: 25px;
+}
+
+.carousel img.right{
+  opacity:1.0;
+  left:600px;
+  z-index:1000;
+  border-radius: 25px;
+}
+
+.carousel img.waiting{
+  left:600px;
+  opacity:0.0;
+  z-index:100;
+}
+
+.carousel img.hidden{
+  opacity:0.0;
+}
+
+.carousel .controls{
+  position:absolute;
+  width:100%;
+  height:100%;
+  padding:100px 0 0 0;
+  z-index:10001;
+}
+
+.carousel .controls button{
+  font-size:300%;
+  background:transparent;
+  border:none;
+  display: none;
+}
+
+.carousel .controls .next{
+  position:absolute;
+  right:0;
+}
+
+.demo{
+  font-size: 2.0rem;
+}

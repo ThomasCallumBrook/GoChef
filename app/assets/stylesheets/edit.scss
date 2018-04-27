@@ -1,0 +1,53 @@
+/* edit page */
+.edit-form{
+  position:absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50% , 56px);
+  width:80%;
+  min-width: 800px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+  "chef chef location location"
+  "biopic biopic map map"
+  ". gallery gallery ."
+  ;
+  grid-row-gap: 40px;
+  background-color: rgba(139, 174, 229, 0.8);
+  border-radius: 4px;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  h2{
+    display: inline;
+  }
+  .chef-data{
+    grid-area: chef;
+    justify-self: center;
+  }
+  .location-data{
+    grid-area: location;
+    justify-self: center;
+  }
+  .bio-pic-data{
+    grid-area: biopic;
+    justify-self: center;
+  }
+}
+.map-data{
+  grid-area: map;
+  justify-self: center;
+}
+.gallery-data{
+  grid-area: gallery;
+  justify-self: start;
+}
+.bio-text{
+  text-align: left;
+  height:300px;
+  width: 300px;
+  border-radius: 5px;
+  font-family: arial;
+}
