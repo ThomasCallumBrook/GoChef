@@ -2,25 +2,40 @@
   <div class="chef-view">
     <h1><%= @user.name %></h1>
     <p class="bio"> <%= @user.bio %> </p>
-    <div id="cuisine">
-      <h2>Cuisines:</h2>
+    <p>Contact: <%= @user.email %></p>
+  </div>
+
+   <div class= "attributes" id="cuisine">
+      <h4>Cuisines:</h4>
       <ul>
         <% @user.cuisines.each do |cuisine| %>
           <li><%= cuisine.food %></li>
         <% end %>
       </ul>
     </div>
-    <div id="rating_bio"><%= @user.rating %></div>
-    <div id="price_bio"><%= @user.price_per_head %></div>
-    <div id="caters_bio"><%= @user.max_party_size %></div>
-  </div>
+    <div class= "attributes" id="rating_bio">
+      <h4>Rating:</h4>
+      <%= @user.rating %>
+    </div>
+
+    <div class= "attributes" id="price_bio">
+      <h4>Price:</h4>
+        <%= @user.price_per_head %>
+    </div>
+
+    <div class= "attributes" id="caters_bio">
+      <h4>Caters for:</h4>
+        <%= @user.max_party_size %></div>
 
   <div class="portrait" style="background-image:url(<%= image_path(@user.avatar) %>)"></div>
-    <div id="gallery">
-      <%@user.images.each do |pic| %>
-        <%= image_tag(pic.picture.url) %>
-      <% end %>
-    </div>
+
+  <div id="gallery-banner">
+      <div id="gallery">
+        <%@user.images.each do |pic| %>
+          <%= image_tag(pic.picture.url) %>
+        <% end %>
+      </div>
   </div>
 
 </div>
+
