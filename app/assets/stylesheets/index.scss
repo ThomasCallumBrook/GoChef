@@ -12,9 +12,8 @@
   position: relative;
   background-size: cover;
   box-sizing: border-box;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 112px);
   color: #fff;
-  position: relative;
   text-align: left;
 
   }
@@ -39,7 +38,7 @@
 }
 .hero-content h1 {
   position: relative;
-  color: rgba(0, 0, 0, 0.9  );
+  color: rgba(0, 0, 0, 0.7);
   font-family:'Open Sans';
   font-size: 5vw;
   margin-bottom: 0.25em;
@@ -138,17 +137,27 @@
    -moz-box-shadow: none;
    -webkit-box-shadow: none;
    box-shadow: none;
-   align-items: start;
-   grid-template-rows: 20px;
-   height: 42px;
+   align-items: center;
+   grid-template-rows: 50px;
+   height: 50px;
  }
  .btn {
-   margin-top: 4px;
    background-color: rgb(139, 174, 229);
    font-size: 18px;
    border-radius: 15px;
    padding: 5px;
-   border-color: rgb(139, 174, 229);    &:hover  {
+   border: 2px solid rgb(139, 174, 229);
+   &:hover  {
      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8)
    }
+}
+#cuisine-search {
+  grid-area: piccy;
+  width: 130px;
+  margin-left: 10px;
+}
+.cuisine {
+  grid-area: title;
+  width: 80px;
+  justify-self: end;
 }

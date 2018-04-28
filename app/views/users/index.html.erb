@@ -12,13 +12,10 @@
 <div class="index">
 
   <div class="row-container">
-
+    <%= form_tag '/users/cuisine' do %>
     <div class="row button">
-
-      <%= form_tag '/users/cuisine' do %>
         <%= text_field_tag :cuisine, nil, placeholder: 'search cuisine type', id: "cuisine-search" %>
-          <%= submit_tag "search", id: "cuisine-btn"%>
-
+        <%= submit_tag "search", class: "cuisine btn"%>
       <% end %>
         <% if @message %>
         <%= @message %>

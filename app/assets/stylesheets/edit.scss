@@ -39,10 +39,15 @@
 .map-data{
   grid-area: map;
   justify-self: center;
+  h3 {
+    margin-top: 30px;
+    text-align: center;
+    width:300px;
+  }
 }
 .gallery-data{
   grid-area: gallery;
-  justify-self: start;
+  justify-self: center;
 }
 .bio-text{
   text-align: left;
@@ -50,4 +55,14 @@
   width: 300px;
   border-radius: 5px;
   font-family: arial;
+}
+
+@media only screen and (max-width: 750px) {
+  .edit-form {
+    grid-template-columns: 100%;
+    grid-template-rows: 33% 33% 33% 33% 33%;
+    grid-template-areas:
+    "chef" "location" "map" "biopic" "gallery";
+    min-width: 100px;
+  }
 }
