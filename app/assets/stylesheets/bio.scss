@@ -2,19 +2,20 @@
 .bio-page{
   position:absolute;
   display: grid;
-  grid-row: auto 300px;
+  grid-template-row: auto auto 300px;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-areas:
   "bio bio bio portrait"
+  "cuisine rating price caters"
   "gallery gallery gallery gallery"
   ;
   width: 80%;
   left:50%;
   transform: translate(-50% , 0 );
   grid-gap: 20px;
+
   .chef-view {
     grid-area: bio;
-    min-height: 90vh;
     h1 {
       font-size: 45px;
       margin-bottom: 10px;
@@ -25,6 +26,39 @@
       margin-bottom: 10px;
     }
   }
+
+    /* attributes */
+
+    #cuisine {
+      grid-area: cuisine;
+    }
+
+    #rating_bio {
+      grid-area: rating;
+    }
+
+    #price_bio {
+      grid-area: price;
+    }
+
+    #caters_bio {
+      grid-area: caters;
+    }
+
+    h4 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .attributes {
+     -moz-box-shadow: 0 0 3px #000;
+      -webkit-box-shadow: 0 0 3px #000;
+      box-shadow: 0 0 3px #000;
+      background-color: rgba(139, 174, 229, 0.8);
+      border-radius: 10px;
+      text-align: center;
+    }
+
   .portrait {
     grid-area: portrait;
     align-self: top;
@@ -37,93 +71,103 @@
     justify-self: end;
   }
 
-}
-/* gallery */
-#gallery{
-  grid-area: gallery;
-  margin: auto;
-  background-size: cover;
-  max-height: 300px;
-  margin-bottom: 20px;
-}
-.carousel{
-  position:relative;
-  width:600px;
-  height:300px;
-  overflow:hidden;
-}
+  /* gallery */
+    #gallery{
+      grid-area: gallery;
+      margin: auto;
+      background-size: cover;
+      max-height: 300px;
+      margin-bottom: 20px;
+    }
+    .carousel{
+      position:relative;
+      width:600px;
+      height:300px;
+      overflow:hidden;
+    }
 
-.carousel img{
-  max-width:600px;
-  position:absolute;
-  top:0;
-  left:0;
-  opacity:0.0;
-}
+    .carousel img{
+      max-width:600px;
+      position:absolute;
+      top:0;
+      left:0;
+      opacity:0.0;
+    }
 
-.carousel.fade img{
-  transition: opacity 1s;
-}
+    .carousel.fade img{
+      transition: opacity 1s;
+    }
 
-.carousel.slide img{
-  transition: left 1s;
-}
+    .carousel.slide img{
+      transition: left 1s;
+    }
 
-.carousel img.show{
-  opacity:1.0;
-}
+    .carousel img.show{
+      opacity:1.0;
+    }
 
-.carousel img.left{
-  opacity:1.0;
-  left:-600px;
-  z-index:1000;
-  border-radius: 25px;
-}
+    .carousel img.left{
+      opacity:1.0;
+      left:-600px;
+      z-index:1000;
+      border-radius: 25px;
+    }
 
-.carousel img.centre{
-  opacity:1.0;
-  left:0px;
-  z-index:10000;
-  border-radius: 25px;
-}
+    .carousel img.centre{
+      opacity:1.0;
+      left:0px;
+      z-index:10000;
+      border-radius: 25px;
+    }
 
-.carousel img.right{
-  opacity:1.0;
-  left:600px;
-  z-index:1000;
-  border-radius: 25px;
-}
+    .carousel img.right{
+      opacity:1.0;
+      left:600px;
+      z-index:1000;
+      border-radius: 25px;
+    }
 
-.carousel img.waiting{
-  left:600px;
-  opacity:0.0;
-  z-index:100;
-}
+    .carousel img.waiting{
+      left:600px;
+      opacity:0.0;
+      z-index:100;
+    }
 
-.carousel img.hidden{
-  opacity:0.0;
-}
+    .carousel img.hidden{
+      opacity:0.0;
+    }
 
-.carousel .controls{
-  position:absolute;
-  width:100%;
-  height:100%;
-  padding:100px 0 0 0;
-  z-index:10001;
-}
+    .carousel .controls{
+      position:absolute;
+      width:100%;
+      height:100%;
+      padding:100px 0 0 0;
+      z-index:10001;
+    }
 
-.carousel .controls button{
-  font-size:300%;
-  background:transparent;
-  border:none;
-  display: none;
-}
+    .carousel .controls button{
+      font-size:300%;
+      background:transparent;
+      border:none;
+      display: none;
+    }
 
-.carousel .controls .next{
-  position:absolute;
-  right:0;
-}
+    .carousel .controls .next{
+      position:absolute;
+      right:0;
+    }
 
-.demo{
-  font-size: 2.0rem;
+    .demo{
+      font-size: 2.0rem;
+    }
+
+    #gallery-banner{
+      grid-area: gallery;
+      -moz-box-shadow: 0 0 3px #000;
+      -webkit-box-shadow: 0 0 3px #000;
+      box-shadow: 0 0 3px #000;
+      height: 300px;
+      background-color: rgba(139, 174, 229, 0.8);
+    }
+
 }

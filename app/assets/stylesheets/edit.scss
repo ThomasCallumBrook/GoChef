@@ -12,7 +12,7 @@
   grid-template-areas:
   "chef chef location location"
   "biopic biopic map map"
-  ". gallery gallery ."
+  "cuisine cuisine gallery gallery"
   ;
   grid-row-gap: 40px;
   background-color: rgba(139, 174, 229, 0.8);
@@ -45,6 +45,13 @@
     width:300px;
   }
 }
+.cuisines-container {
+  grid-area: cuisine;
+  justify-self: center;
+}
+.form-cuisine-text-left {
+  margin-left: 20px;
+}
 .gallery-data{
   grid-area: gallery;
   justify-self: center;
@@ -66,3 +73,4 @@
     min-width: 100px;
   }
 }
+
