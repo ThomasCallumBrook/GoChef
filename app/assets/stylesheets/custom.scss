@@ -121,84 +121,10 @@ nav{
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   #header h1{
     font-size: 2rem;
     width:100px;
+    justify-self: start;
   }
 }
-
-
-/* button-title */
-
-  #rating {
-    grid-area: rating;
-    justify-self: center;
-  }
-
-
-  #caters {
-    grid-area: party;
-    justify-self: center;
-  }
-
-
-  #price {
-    grid-area: price;
-    justify-self: center;
-  }
-
-
-  #cuisine-btn {
-    left: 180px;
-    position: absolute;
-    margin-top: -20px;
-    background-color: rgb(139, 174, 229);
-    font-size: 18px;
-    border-radius: 15px;
-    padding: 5px;
-    border-color: rgb(139, 174, 229);
-  }
-
-  #cuisine-search{
-    left: 20px;
-    width: 120px;
-    height: 20px;
-    top: 8px;
-    grid-area: piccy;
-    position: relative;
-  }
-
-
-
-  .button {
-    background-color: rgb(77, 116, 146);
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    align-items: start;
-    grid-template-rows: 20px;
-    height: 42px;
-  }
-
-  .btn {
-    margin-top: 4px;
-    background-color: rgb(139, 174, 229);
-    font-size: 18px;
-    border-radius: 15px;
-    padding: 5px;
-    border-color: rgb(139, 174, 229);
-
-
-    &:hover  {
-      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8)
-    }
-
-
-
-  }
-
-
-
-
-

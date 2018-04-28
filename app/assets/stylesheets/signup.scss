@@ -17,8 +17,15 @@
   "user mapInfo map";
   background-color: rgba(139, 174, 229, 0.8);
   border-radius: 25px;
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
   min-height: 70vh;
-  min-width: 950px; 
+  min-width: 950px;
+  h5 {
+    text-align: center;
+    width:300px;
+  }
 }
 
 .user-signup{
@@ -32,4 +39,18 @@
 .map-signup{
   grid-area: map;
   justify-self: center;
+}
+.form-btn{
+  background-color: rgb(77, 116, 146);
+  border: 2px solid rgb(77, 116, 146);
+  color: #eee;
+}
+@media only screen and (max-width: 950px) {
+  .new-form {
+    grid-template-columns: 100%;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-areas:
+    "user" "mapInfo" "map";
+    min-width: 100px;
+  }
 }

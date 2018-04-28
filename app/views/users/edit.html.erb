@@ -59,7 +59,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class:"btn form-btn" %>
       </div>
     </div>
   <% end %>
@@ -85,11 +85,11 @@
       <h2>Select files to add to your profile gallery</h2>
       <div class="field">
         <%= f.label :images %><br>
-        <%= f.file_field :images, multiple: true %>
+          <%= f.file_field :images, multiple: true %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class:"btn form-btn" %>
       </div>
       <%= link_to "Back", :back %>
 
