@@ -162,8 +162,7 @@
     }
 
     #gallery-banner{
-      width: 1500px;
-      margin-left: -150px;
+      grid-area: gallery;
       -moz-box-shadow: 0 0 3px #000;
       -webkit-box-shadow: 0 0 3px #000;
       box-shadow: 0 0 3px #000;
