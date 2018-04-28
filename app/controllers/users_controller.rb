@@ -51,6 +51,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @skillsets = Skillset.new()
+    @user = current_user
     render 'edit'
   end
 
