@@ -1,57 +1,60 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="signup-header">
+    <h2>Sign up or <%= render "devise/shared/links" %></h2>
   </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="new-form">
+      <%= devise_error_messages! %>
+      <div class="user-signup">
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+      <div class="map-info-signup">
+        <div class="field">
+          <%= f.label :location_lat %><br />
+          <%= f.text_field :location_lat, autofocus: true, class:"lat"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+        <div class="field">
+          <%= f.label :location_lon %><br />
+          <%= f.text_field :location_lon, autofocus: true, class:"lon"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :location_lat %><br />
-    <%= f.text_field :location_lat, autofocus: true, class:"lat"%>
-  </div>
+        <div class="field">
+          <%= f.label :radius_kilometers %><br />
+          <%= f.text_field :radius, autocomplete: "off", class:"rad" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+      </div>
+      <div class="map-signup">
+        <h5>Click on map to set Catering Region (Uses selected radius)</h5>
+        <div id="mapid"></div>
+      </div>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :location_lon %><br />
-    <%= f.text_field :location_lon, autofocus: true, class:"lon"%>
-  </div>
 
-  <div class="field">
-    <%= f.label :radius_kilometers %><br />
-    <%= f.text_field :radius, autocomplete: "off", class:"rad" %>
-  </div>
 
-  <h3>Click on map to set Catering Region (Uses selected radius)</h3>
-
-  <div id="mapid"></div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<div class="devise-links">
-  <%= render "devise/shared/links" %>
-</div>
 <script type="text/javascript">
   var lat = document.querySelector('.lat');
   var lon = document.querySelector('.lon');

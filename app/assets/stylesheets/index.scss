@@ -148,7 +148,8 @@
    font-size: 18px;
    border-radius: 15px;
    padding: 5px;
-   border-color: rgb(139, 174, 229);    &:hover  {
+   border: 2px solid rgb(139, 174, 229);    
+   &:hover  {
      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8)
    }
 }
