@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_many :skillsets
   has_many :images
   has_many :cuisines, through: :skillsets
-
+  ratyrate_rateable 'chef'
+  ratyrate_rater
   def as_json
     {id: id, name: name, location_lat:location_lat, location_lon: location_lon, radius: radius}
   end

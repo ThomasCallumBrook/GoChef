@@ -58,6 +58,10 @@
       border-radius: 10px;
       text-align: center;
     }
+    .bio-cuisine{
+      margin-left: 20%;
+      text-align: left;
+    }
 
   .portrait {
     grid-area: portrait;
@@ -99,7 +103,7 @@
     }
 
     .carousel.slide img{
-      transition: left 1s;
+      transition: left 2s;
     }
 
     .carousel img.show{

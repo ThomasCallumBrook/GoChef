@@ -47,10 +47,14 @@
 }
 .cuisines-container {
   grid-area: cuisine;
-  justify-self: center;
+  justify-self: start;
+  padding-left: 50px;
 }
 .form-cuisine-text-left {
+  display: inline-block;
   margin-left: 20px;
+  width: 60px;
+
 }
 .gallery-data{
   grid-area: gallery;
@@ -67,10 +71,9 @@
 @media only screen and (max-width: 750px) {
   .edit-form {
     grid-template-columns: 100%;
-    grid-template-rows: 33% 33% 33% 33% 33%;
+    grid-template-rows: 33% 33% 33% 33% 33% 33%;
     grid-template-areas:
-    "chef" "location" "map" "biopic" "gallery";
+    "chef" "location" "map" "biopic" "gallery" "cuisine"  ;
     min-width: 100px;
   }
 }
-

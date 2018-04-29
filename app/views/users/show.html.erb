@@ -2,20 +2,26 @@
   <div class="chef-view">
     <h1><%= @user.name %></h1>
     <p class="bio"> <%= @user.bio %> </p>
-    <p>Contact: <%= @user.email %></p>
-  </div>
+    <p>To book this chef, please contact: <%= @user.email %></p>
+    </div>
 
-   <div class= "attributes" id="cuisine">
+    <div class= "attributes" id="cuisine">
       <h4>Cuisines:</h4>
       <ul>
         <% @user.cuisines.each do |cuisine| %>
-          <li><%= cuisine.food %></li>
+          <li class="bio-cuisine"><%= cuisine.food %></li>
         <% end %>
       </ul>
     </div>
     <div class= "attributes" id="rating_bio">
-      <h4>Rating:</h4>
-      <%= @user.rating %>
+      <% unless current_user == @user %>
+        <h4 class= "ratings">Leave a rating!</h3>
+        <%= rating_for @user, 'chef', enable_half: true, half_show: true, disable_after_rate: true  %>
+      <% else %>
+        <h4 class= "ratings">Leave a rating!</h3>
+        <p> Cannot leave a rating for yourself! </p>
+      <% end%>
+
     </div>
 
     <div class= "attributes" id="price_bio">
@@ -24,7 +30,7 @@
     </div>
 
     <div class= "attributes" id="caters_bio">
-      <h4>Cater for:</h4>
+      <h4>Caters for:</h4>
         <%= @user.max_party_size %></div>
 
   <div class="portrait" style="background-image:url(<%= image_path(@user.avatar) %>)"></div>
@@ -38,4 +44,3 @@
   </div>
 
 </div>
-
