@@ -15,7 +15,7 @@
     <%= form_tag '/users/cuisine' do %>
     <div class="row button">
         <%= text_field_tag :cuisine, nil, placeholder: 'search cuisine type', id: "cuisine-search" %>
-        <%= submit_tag "search", class: "cuisine btn"%>
+        <%= submit_tag "Search", class: "cuisine btn"%>
       <% end %>
         <% if @message %>
         <%= @message %>
