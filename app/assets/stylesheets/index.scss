@@ -69,7 +69,7 @@
   min-width: 600px;
   max-width: 1000px;
   display: grid;
-  grid-template-columns: 100px 20% 15% 15% 15%;
+  grid-template-columns: 100px 20% 100px 15% 15%;
   grid-template-rows: 100px;
   grid-column-gap: 20px;
   grid-template-areas: "piccy title rating price party";
@@ -95,7 +95,7 @@
     justify-self: start;
     font-size: 1.2rem;
   }
-  .rating {
+  .star {
     grid-area: rating;
     justify-self: center;
   }

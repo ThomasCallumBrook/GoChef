@@ -3,9 +3,9 @@
     <h1><%= @user.name %></h1>
     <p class="bio"> <%= @user.bio %> </p>
     <p>Contact: <%= @user.email %></p>
-  </div>
+    </div>
 
-   <div class= "attributes" id="cuisine">
+    <div class= "attributes" id="cuisine">
       <h4>Cuisines:</h4>
       <ul>
         <% @user.cuisines.each do |cuisine| %>
@@ -14,8 +14,10 @@
       </ul>
     </div>
     <div class= "attributes" id="rating_bio">
-      <h4>Rating:</h4>
-      <%= @user.rating %>
+      <% unless current_user == @user %>
+        <h3 class= "ratings">Leave a rating!</h3>
+        <%= rating_for @user, 'chef', enable_half: true, half_show: true, disable_after_rate: true  %>
+      <% end%>
     </div>
 
     <div class= "attributes" id="price_bio">
@@ -38,4 +40,3 @@
   </div>
 
 </div>
-
