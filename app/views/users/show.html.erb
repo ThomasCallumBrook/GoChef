@@ -9,15 +9,19 @@
       <h4>Cuisines:</h4>
       <ul>
         <% @user.cuisines.each do |cuisine| %>
-          <li><%= cuisine.food %></li>
+          <li class="bio-cuisine"><%= cuisine.food %></li>
         <% end %>
       </ul>
     </div>
     <div class= "attributes" id="rating_bio">
       <% unless current_user == @user %>
-        <h3 class= "ratings">Leave a rating!</h3>
+        <h4 class= "ratings">Leave a rating!</h3>
         <%= rating_for @user, 'chef', enable_half: true, half_show: true, disable_after_rate: true  %>
+      <% else %>
+        <h4 class= "ratings">Leave a rating!</h3>
+        <p> Cannot leave a rating for yourself! </p>
       <% end%>
+
     </div>
 
     <div class= "attributes" id="price_bio">
