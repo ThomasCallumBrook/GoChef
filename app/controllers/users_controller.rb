@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     if params['cuisine'] == ''
@@ -51,8 +51,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @skillsets = Skillset.new()
-    @user = current_user
     render 'edit'
   end
 

@@ -2,7 +2,7 @@
   <div class="chef-view">
     <h1><%= @user.name %></h1>
     <p class="bio"> <%= @user.bio %> </p>
-    <p>Contact: <%= @user.email %></p>
+    <p>To book this chef, please contact: <%= @user.email %></p>
     </div>
 
     <div class= "attributes" id="cuisine">
@@ -26,7 +26,7 @@
     </div>
 
     <div class= "attributes" id="caters_bio">
-      <h4>Cater for:</h4>
+      <h4>Caters for:</h4>
         <%= @user.max_party_size %></div>
 
   <div class="portrait" style="background-image:url(<%= image_path(@user.avatar) %>)"></div>
